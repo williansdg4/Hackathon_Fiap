@@ -1,4 +1,6 @@
-﻿namespace Shared.Domain.Entities
+﻿using Shared.Domain.Enums;
+
+namespace Shared.Domain.Entities
 {
     public class Appointment
     {
@@ -6,6 +8,7 @@
         public int IdDoctor { get; set; }
         public int IdPatient { get; set; }
         public int IdTimeSchedule { get; set; }
-        public bool Status { get; set; }
+        public AppointmentStatusEnum Status { get; set; }
+        public string? CancellationJustification { get; set; }
     }
 }
