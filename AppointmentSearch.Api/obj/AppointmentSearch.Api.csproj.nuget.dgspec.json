@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj": {}
+    "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj": {
+    "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
+        "projectUniqueName": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
         "projectName": "AppointmentSearch.Api",
-        "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
-        "packagesPath": "C:\\Users\\Willians\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\obj\\",
+        "projectPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\AppointmentSearch.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Willians\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,11 +31,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj": {
-                "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj"
+              "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\Shared.Domain.csproj": {
+                "projectPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\Shared.Domain.csproj"
               },
-              "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\Shared.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\Shared.Infrastructure.csproj"
+              "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Infrastructure\\Shared.Infrastructure.csproj": {
+                "projectPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Infrastructure\\Shared.Infrastructure.csproj"
               }
             }
           }
@@ -50,8 +49,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -81,25 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj": {
+    "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\Shared.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj",
+        "projectUniqueName": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\Shared.Domain.csproj",
         "projectName": "Shared.Domain",
-        "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj",
-        "packagesPath": "C:\\Users\\Willians\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\obj\\",
+        "projectPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\Shared.Domain.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Willians\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,8 +121,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -146,25 +142,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\Shared.Infrastructure.csproj": {
+    "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Infrastructure\\Shared.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\Shared.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Infrastructure\\Shared.Infrastructure.csproj",
         "projectName": "Shared.Infrastructure",
-        "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\Shared.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Willians\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\obj\\",
+        "projectPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Infrastructure\\Shared.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Willians\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,8 +173,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj": {
-                "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj"
+              "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\Shared.Domain.csproj": {
+                "projectPath": "D:\\Users\\rafae\\Documents\\FIAP - POS TECH\\Hackaton\\Code\\Shared.Domain\\Shared.Domain.csproj"
               }
             }
           }
@@ -193,13 +188,24 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.12, )"
@@ -227,6 +233,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.3, )"
             }
           },
           "imports": [
@@ -245,7 +255,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using Shared.Infrastructure.Authentication;
 using System.Reflection;
 using Shared.Infrastructure.Configurations;
 
@@ -19,6 +20,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.DbConfiguration(configuration.GetConnectionString("TechChallenge") ?? string.Empty);
+builder.Services.AddJwtAuthentication();
+
 
 var app = builder.Build();
 
