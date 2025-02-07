@@ -3,6 +3,8 @@ using Shared.Infrastructure.Authentication;
 using System.Reflection;
 using Shared.Infrastructure.Configurations;
 using Account.Infrastructure;
+using Account.Infrastructure.Configurations;
+using Account.Domain.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
@@ -36,10 +38,12 @@ builder.Services.AddSwaggerGen(c =>
         }, new List<string>()
     } });
 });
+builder.Services.ConfigurationRepository();
+builder.Services.ConfigurationServices();
+builder.Services.ConfigurationDomain();
 
 builder.Services.DbConfiguration(configuration.GetConnectionString("TechChallenge") ?? string.Empty);
 builder.Services.AddJwtAuthentication();
-builder.Services.RegisterServices();
 
 var app = builder.Build();
 

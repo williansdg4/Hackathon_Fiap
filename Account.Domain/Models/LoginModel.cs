@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Account.Domain.Models
 {
     public class LoginModel
     {
-        public string Login { get; set;}
-        public string Password { get; set;}
-        public string Email { get; set;}
+        [Required(AllowEmptyStrings = false, ErrorMessage = "User is required")]
+        public required string User { get; set;}
+
+        [PasswordPropertyText(true), Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
+        public required string Password { get; set;}
     }
 }

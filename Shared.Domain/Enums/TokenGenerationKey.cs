@@ -8,8 +8,8 @@ namespace Shared.Domain.Enums
 {
     public static class TokenGenerationKey
     {
-        public const string Key = "healt-med-schedulling-key-healt-med-schedulling-key";
-        public const string Issuer = "healt-med-issuer";
-        public const string Audience = "healt-med-audience";
+        public const string Key = "health-med-schedulling-token-key";
+        public const string Issuer = "health-med-issuer";
+        public const string Audience = "health-med-audience";
     }
 }

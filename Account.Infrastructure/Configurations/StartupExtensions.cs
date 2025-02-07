@@ -5,18 +5,20 @@ using Account.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Infrastructure.Authentication;
 
-namespace Account.Infrastructure
+namespace Account.Infrastructure.Configurations
 {
-    public static class Register
+    public static class StartupExtensions
     {
-        public static IServiceCollection RegisterServices(this IServiceCollection services)
+        public static void ConfigurationRepository(this IServiceCollection services)
+        {
+            services.AddScoped<IDoctorRepository, DoctorRepository>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
+        }
+
+        public static void ConfigurationServices(this IServiceCollection services)
         {
             services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddScoped<IAccountManager, AccountManager>();
-            services.AddScoped<IDoctorRepository, DoctorRepository>();
-            services.AddScoped<IPatientRepository, PatientRepository>();
-
-            return services;
         }
     }
 }

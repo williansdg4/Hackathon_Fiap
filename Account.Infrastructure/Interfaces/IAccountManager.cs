@@ -8,7 +8,7 @@ namespace Account.Infrastructure.Interfaces
 {
     public interface IAccountManager
     {
-        string Authenticate(string userName, string email, string password);
-        void CreateUser(string userName, string email, string password, string role);
+        string Authenticate(string userName, string password);
+        void CreateUser(string userName, string? email, string password, string role);
     }
 }

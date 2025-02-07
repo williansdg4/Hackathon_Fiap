@@ -10,6 +10,7 @@ namespace Shared.Infrastructure.Repositories
     {
         IList<T> GetAll();
         T? Get(Func<T, bool> predicate);
+        bool Exists(Func<T, bool> predicate);
         IEnumerable<T> Where(Func<T, bool> predicate);
         void Insert(T entity);
         void Update(T entity);

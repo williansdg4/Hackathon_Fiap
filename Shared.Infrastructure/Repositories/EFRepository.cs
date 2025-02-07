@@ -26,6 +26,9 @@ namespace Shared.Infrastructure.Repositories
         public T? Get(Func<T, bool> predicate) =>
             _dbSet.FirstOrDefault(predicate);
 
+        public bool Exists(Func<T, bool> predicate) =>
+            _dbSet.Any(predicate);
+
         public IEnumerable<T> Where(Func<T, bool> predicate) =>
             _dbSet.Where(predicate);
 

@@ -1,5 +1,6 @@
 ﻿using Account.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Shared.Domain.Auxiliar;
 using Shared.Infrastructure.Authentication;
 using System;
 using System.Collections.Generic;
@@ -28,12 +29,12 @@ namespace Account.Infrastructure.Implementations
             _tokenGenerator = tokenGenerator;
         }
 
-        public void CreateUser(string userName, string email, string password, string role)
+        public void CreateUser(string userName, string? email, string password, string role)
         {
 
             if (_userManager.FindByNameAsync(userName).Result != null ||
                 !string.IsNullOrEmpty(email) && _userManager.FindByEmailAsync(userName).Result != null)
-                throw new Exception("User already exists");
+                throw new AlreadyExistsException("User already exists");
 
             var user = new IdentityUser { UserName = userName, Email = email };
             var userResult = _userManager.CreateAsync(user, password).Result;
@@ -59,20 +60,20 @@ namespace Account.Infrastructure.Implementations
             }
         }
 
-        public string Authenticate(string userName, string email, string password)
+        public string Authenticate(string userName, string password)
         {
-            var user = _userManager.FindByNameAsync(userName).Result;
-
-            if (user == null && !string.IsNullOrEmpty(email))
-                user = _userManager.FindByEmailAsync(userName).Result;
-
-            if (user == null)
-                throw new Exception("Invalid username or password");
+            var user =
+                _userManager.FindByNameAsync(userName).Result ??
+                _userManager.FindByEmailAsync(userName).Result ??
+                throw new UnauthorizedException("Invalid username or password");
 
             var signinResult = _signInManager.CheckPasswordSignInAsync(user, password, true).Result;
 
             if (signinResult.IsLockedOut)
-                throw new Exception("Blocked user");
+                throw new UnauthorizedException("Blocked user");
+
+            if (!signinResult.Succeeded)
+                throw new UnauthorizedException("Invalid username or password");
 
             return _tokenGenerator.Generate(user);
 
