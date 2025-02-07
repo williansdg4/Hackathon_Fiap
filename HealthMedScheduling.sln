@@ -11,35 +11,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentSchedulingApi", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentSearchApi", "AppointmentSearchApi", "{F96008FF-86FD-4259-95BE-95FFA5D60172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentScheduling.Api", "AppointmentScheduling.Api\AppointmentScheduling.Api.csproj", "{503EE2D5-0DDC-4137-8654-63509E4772D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentScheduling.Api", "AppointmentScheduling.Api\AppointmentScheduling.Api.csproj", "{503EE2D5-0DDC-4137-8654-63509E4772D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentSearch.Api", "AppointmentSearch.Api\AppointmentSearch.Api.csproj", "{25BA502D-A446-45D8-8FCE-3313E9ED9720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentSearch.Api", "AppointmentSearch.Api\AppointmentSearch.Api.csproj", "{25BA502D-A446-45D8-8FCE-3313E9ED9720}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmnetConsumerWorker", "AppointmnetConsumerWorker", "{FD380CAA-0325-420F-9167-BFED431F3BF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentConsumer.Worker", "AppointmentConsumer.Worker\AppointmentConsumer.Worker.csproj", "{2B46A2E4-D289-47D6-9FFE-527B43BD4959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentConsumer.Worker", "AppointmentConsumer.Worker\AppointmentConsumer.Worker.csproj", "{2B46A2E4-D289-47D6-9FFE-527B43BD4959}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{91B57C63-5DC2-4285-933C-7328B896AB05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{FC4C079C-EFC9-476C-A67C-5B22BD833919}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentScheduling.Domain", "AppointmentScheduling.Domain\AppointmentScheduling.Domain.csproj", "{B7A72514-E0A6-4A67-9708-7E102C498894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentScheduling.Domain", "AppointmentScheduling.Domain\AppointmentScheduling.Domain.csproj", "{B7A72514-E0A6-4A67-9708-7E102C498894}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentScheduling.Infrastructure", "AppointmentScheduling.Infrastructure\AppointmentScheduling.Infrastructure.csproj", "{46569B93-FFCA-44D7-BA48-4DE2B9F6E3ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentScheduling.Infrastructure", "AppointmentScheduling.Infrastructure\AppointmentScheduling.Infrastructure.csproj", "{46569B93-FFCA-44D7-BA48-4DE2B9F6E3ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentSearch.Domain", "AppointmentSearch.Domain\AppointmentSearch.Domain.csproj", "{D00EAB35-6931-4B8E-B4FF-491946E00152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentSearch.Domain", "AppointmentSearch.Domain\AppointmentSearch.Domain.csproj", "{D00EAB35-6931-4B8E-B4FF-491946E00152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentSearch.Infrastructure", "AppointmentSearch.Infrastructure\AppointmentSearch.Infrastructure.csproj", "{F0CDBAB3-0EA2-4EBC-8B18-3E4356BFBD2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentSearch.Infrastructure", "AppointmentSearch.Infrastructure\AppointmentSearch.Infrastructure.csproj", "{F0CDBAB3-0EA2-4EBC-8B18-3E4356BFBD2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentConsumer.Domain", "AppointmentConsumer.Domain\AppointmentConsumer.Domain.csproj", "{985F8D12-C4E9-4E49-91F7-37E8F11C71C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentConsumer.Domain", "AppointmentConsumer.Domain\AppointmentConsumer.Domain.csproj", "{985F8D12-C4E9-4E49-91F7-37E8F11C71C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentConsumer.Infrastructure", "AppointmentConsumer.Infrastructure\AppointmentConsumer.Infrastructure.csproj", "{41E2ED25-49DF-4965-BF65-3B11788D0108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentConsumer.Infrastructure", "AppointmentConsumer.Infrastructure\AppointmentConsumer.Infrastructure.csproj", "{41E2ED25-49DF-4965-BF65-3B11788D0108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Domain", "Shared.Domain\Shared.Domain.csproj", "{86776D6D-F540-4716-868A-BA63A6E34DE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Domain", "Shared.Domain\Shared.Domain.csproj", "{86776D6D-F540-4716-868A-BA63A6E34DE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure", "Shared.Infrastructure\Shared.Infrastructure.csproj", "{3D9B07AD-710D-45AC-A3DE-99930D469597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Infrastructure", "Shared.Infrastructure\Shared.Infrastructure.csproj", "{3D9B07AD-710D-45AC-A3DE-99930D469597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Rabbit", "Shared.Rabbit\Shared.Rabbit.csproj", "{12FA8406-A265-4652-9339-FBB4E95A8BE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Rabbit", "Shared.Rabbit\Shared.Rabbit.csproj", "{12FA8406-A265-4652-9339-FBB4E95A8BE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccountApi", "AccountApi", "{C38097F7-B372-43A7-B9D2-3342E364AFD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Api", "Account.Api\Account.Api.csproj", "{BB89785D-59FC-485B-8527-2F18A1B0B141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Infrastructure", "Account.Infrastructure\Account.Infrastructure.csproj", "{8C239596-020B-44B9-AA26-B8566976D08A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Domain", "Account.Domain\Account.Domain.csproj", "{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +103,18 @@ Global
 		{12FA8406-A265-4652-9339-FBB4E95A8BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12FA8406-A265-4652-9339-FBB4E95A8BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12FA8406-A265-4652-9339-FBB4E95A8BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB89785D-59FC-485B-8527-2F18A1B0B141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB89785D-59FC-485B-8527-2F18A1B0B141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB89785D-59FC-485B-8527-2F18A1B0B141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB89785D-59FC-485B-8527-2F18A1B0B141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C239596-020B-44B9-AA26-B8566976D08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C239596-020B-44B9-AA26-B8566976D08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C239596-020B-44B9-AA26-B8566976D08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C239596-020B-44B9-AA26-B8566976D08A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,5 +138,12 @@ Global
 		{86776D6D-F540-4716-868A-BA63A6E34DE9} = {91B57C63-5DC2-4285-933C-7328B896AB05}
 		{3D9B07AD-710D-45AC-A3DE-99930D469597} = {91B57C63-5DC2-4285-933C-7328B896AB05}
 		{12FA8406-A265-4652-9339-FBB4E95A8BE6} = {91B57C63-5DC2-4285-933C-7328B896AB05}
+		{C38097F7-B372-43A7-B9D2-3342E364AFD6} = {29EE33B2-7067-4FCE-8E19-331B927CBA4F}
+		{BB89785D-59FC-485B-8527-2F18A1B0B141} = {C38097F7-B372-43A7-B9D2-3342E364AFD6}
+		{8C239596-020B-44B9-AA26-B8566976D08A} = {C38097F7-B372-43A7-B9D2-3342E364AFD6}
+		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB} = {C38097F7-B372-43A7-B9D2-3342E364AFD6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EE75BCA-DBD6-4A1A-B223-596FA3FBA03C}
 	EndGlobalSection
 EndGlobal
