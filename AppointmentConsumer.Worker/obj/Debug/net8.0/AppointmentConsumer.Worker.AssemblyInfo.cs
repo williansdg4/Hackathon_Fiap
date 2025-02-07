@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppointmentConsumer.Worker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afbb536ed0be2b2911216dac835d69387238e40c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54fd80f8bf87bdd25d8e1ccd4dacaede82ec772b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppointmentConsumer.Worker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppointmentConsumer.Worker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
