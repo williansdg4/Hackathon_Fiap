@@ -3495,11 +3495,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling_\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
       "projectName": "AppointmentSearch.Api",
-      "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
+      "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling_\\AppointmentSearch.Api\\AppointmentSearch.Api.csproj",
       "packagesPath": "C:\\Users\\Willians\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\AppointmentSearch.Api\\obj\\",
+      "outputPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling_\\AppointmentSearch.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3520,11 +3520,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj": {
-              "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Domain\\Shared.Domain.csproj"
+            "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling_\\Shared.Domain\\Shared.Domain.csproj": {
+              "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling_\\Shared.Domain\\Shared.Domain.csproj"
             },
-            "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\Shared.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling\\Shared.Infrastructure\\Shared.Infrastructure.csproj"
+            "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling_\\Shared.Infrastructure\\Shared.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Willians\\Desktop\\FIAP\\Hackathon\\HealthMedSheduling_\\Shared.Infrastructure\\Shared.Infrastructure.csproj"
             }
           }
         }
