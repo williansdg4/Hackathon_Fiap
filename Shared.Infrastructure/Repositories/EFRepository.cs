@@ -1,15 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shared.Domain.Entities;
 using Shared.Infrastructure.DBContext;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Shared.Infrastructure.Repositories
 {
-    public class EFRepository<T>(ApplicationDbContext context) : IRepository<T> where T : BaseEntity
+    public class EFRepository<T>(ApplicationDbContext context) : IRepository<T> where T : class
     {
         protected ApplicationDbContext _context = context;
         protected DbSet<T> _dbSet = context.Set<T>();
 
-        public void Delete(int id)
+        public void Delete(T entity)
         {
             var entity = Get(id);
 
@@ -20,8 +25,14 @@ namespace Shared.Infrastructure.Repositories
             _context.SaveChanges();
         }
 
-        public T? Get(int id) =>
-            _dbSet.FirstOrDefault(d => d.Id == id);
+        public T? Get(Func<T, bool> predicate) =>
+            _dbSet.FirstOrDefault(predicate);
+
+        public bool Exists(Func<T, bool> predicate) =>
+            _dbSet.Any(predicate);
+
+        public IEnumerable<T> Where(Func<T, bool> predicate) =>
+            _dbSet.Where(predicate);
 
         public IList<T> GetAll() =>
             _dbSet.ToList();

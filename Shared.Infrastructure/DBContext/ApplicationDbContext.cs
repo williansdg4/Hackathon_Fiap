@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Shared.Domain.Entities;
 
 namespace Shared.Infrastructure.DBContext
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         private readonly string? _connString;
 
@@ -34,7 +36,10 @@ namespace Shared.Infrastructure.DBContext
                 optionsBuilder.UseSqlServer(_connString);
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) =>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
