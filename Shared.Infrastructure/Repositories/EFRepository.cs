@@ -1,21 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 using Shared.Domain.Entities;
 using Shared.Infrastructure.DBContext;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shared.Infrastructure.Repositories
 {
-    public class EFRepository<T>(ApplicationDbContext context) : IRepository<T> where T : class
+    public class EFRepository<T>(ApplicationDbContext context) : IRepository<T> where T : BaseEntity
     {
         protected readonly ApplicationDbContext _context = context;
         protected readonly DbSet<T> _dbSet = context.Set<T>();
 
-        public void Delete(T entity)
+        public void Delete(T? entity)
         {
             if (entity == null)
                 return;
@@ -24,10 +18,15 @@ namespace Shared.Infrastructure.Repositories
             _context.SaveChanges();
         }
 
+        public void Delete(int id) => Delete(Get(id));
+
         public virtual IQueryable<T> DbSetIncluded() => _dbSet;
 
         public T? Get(Func<T, bool> predicate) =>
             _dbSet.FirstOrDefault(predicate);
+
+        public T? Get(int id) =>
+            _dbSet.FirstOrDefault(e => e.Id == id);
 
         public bool Exists(Func<T, bool> predicate) =>
             _dbSet.Any(predicate);

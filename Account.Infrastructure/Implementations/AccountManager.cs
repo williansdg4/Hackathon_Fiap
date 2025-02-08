@@ -31,20 +31,22 @@ namespace Account.Infrastructure.Implementations
 
         public void CreateUser(string userName, string? email, string password, string role)
         {
-
             if (_userManager.FindByNameAsync(userName).Result != null ||
                 !string.IsNullOrEmpty(email) && _userManager.FindByEmailAsync(userName).Result != null)
                 throw new AlreadyExistsException("User already exists");
 
             var user = new IdentityUser { UserName = userName, Email = email };
             var userResult = _userManager.CreateAsync(user, password).Result;
+            if (!userResult.Succeeded)
+                throw new StatusCodeException(string.Join(",", userResult.Errors.Select(c => c.Description)));
 
-            if (userResult.Succeeded)
-            {
-                ValidateRole(role);
-                user = _userManager.FindByNameAsync(userName).Result;
-                var roleResult = _userManager.AddToRoleAsync(user, role).Result;
-            }
+            ValidateRole(role);
+            user = _userManager.FindByNameAsync(userName).Result;
+            var roleResult = _userManager.AddToRoleAsync(user, role).Result;
+
+            if (!roleResult.Succeeded)
+                throw new StatusCodeException(string.Join(",", roleResult.Errors.Select(c => c.Description)));
+
         }
 
         private void ValidateRole(string roleName)
@@ -56,7 +58,7 @@ namespace Account.Infrastructure.Implementations
                 role = new IdentityRole { Name = roleName };
                 var roleResult = _roleManager.CreateAsync(role).Result;
                 if (!roleResult.Succeeded)
-                    throw new Exception(string.Join("\n", roleResult.Errors.Select(e => e.Description)));
+                    throw new StatusCodeException(string.Join("\n", roleResult.Errors.Select(e => e.Description)));
             }
         }
 

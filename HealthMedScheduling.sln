@@ -51,11 +51,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Domain", "Account.D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoctorSearchApi", "DoctorSearchApi", "{7F722F33-AB2D-4B28-BF4F-B25C15523855}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorSearch.Api", "DoctorSearch.Api\DoctorSearch.Api.csproj", "{C756A3FD-C103-432D-8BC5-4DD552BD894D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorSearch.Api", "DoctorSearch.Api\DoctorSearch.Api.csproj", "{C756A3FD-C103-432D-8BC5-4DD552BD894D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorSearch.Domain", "DoctorSearch.Domain\DoctorSearch.Domain.csproj", "{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorSearch.Domain", "DoctorSearch.Domain\DoctorSearch.Domain.csproj", "{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorSearch.Infrastructure", "DoctorSearch.Infrastructure\DoctorSearch.Infrastructure.csproj", "{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorSearch.Infrastructure", "DoctorSearch.Infrastructure\DoctorSearch.Infrastructure.csproj", "{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimeScheduleSearchApi", "TimeScheduleSearchApi", "{D55D41B3-3620-46CB-AF85-90ED7B2A722F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimeScheduleRegisterApi", "TimeScheduleRegisterApi", "{F18569AD-426C-47A2-B1C6-A3085F3D255E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeScheduleRegister.Api", "TimeScheduleRegister.Api\TimeScheduleRegister.Api.csproj", "{D91E25AB-92CB-44E1-98FD-737CE9C00BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeScheduleRegister.Domain", "TimeScheduleRegister.Domain\TimeScheduleRegister.Domain.csproj", "{993E69E8-B82C-48FD-A98A-9C08E4F0F8BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeScheduleRegister.Infrastrucure", "TimeScheduleRegister.Infrastrucure\TimeScheduleRegister.Infrastrucure.csproj", "{D66CE3D5-B737-4BAC-A4B8-0D0AC5B45B2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeScheduleSearch.Api", "TimeScheduleSearch.Api\TimeScheduleSearch.Api.csproj", "{16343960-C3BD-4FC0-A2B9-459182C913D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeScheduleSearch.Domain", "TimeScheduleSearch.Domain\TimeScheduleSearch.Domain.csproj", "{99BD7634-24B7-47E4-A05A-592CE574657E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeScheduleSearch.Insfrastructure", "TimeScheduleSearch.Insfrastructure\TimeScheduleSearch.Insfrastructure.csproj", "{204DF6CF-F5DB-4A76-A233-314E8D057F24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +151,30 @@ Global
 		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91E25AB-92CB-44E1-98FD-737CE9C00BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91E25AB-92CB-44E1-98FD-737CE9C00BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91E25AB-92CB-44E1-98FD-737CE9C00BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91E25AB-92CB-44E1-98FD-737CE9C00BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993E69E8-B82C-48FD-A98A-9C08E4F0F8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993E69E8-B82C-48FD-A98A-9C08E4F0F8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993E69E8-B82C-48FD-A98A-9C08E4F0F8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993E69E8-B82C-48FD-A98A-9C08E4F0F8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D66CE3D5-B737-4BAC-A4B8-0D0AC5B45B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66CE3D5-B737-4BAC-A4B8-0D0AC5B45B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66CE3D5-B737-4BAC-A4B8-0D0AC5B45B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66CE3D5-B737-4BAC-A4B8-0D0AC5B45B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16343960-C3BD-4FC0-A2B9-459182C913D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16343960-C3BD-4FC0-A2B9-459182C913D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16343960-C3BD-4FC0-A2B9-459182C913D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16343960-C3BD-4FC0-A2B9-459182C913D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99BD7634-24B7-47E4-A05A-592CE574657E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99BD7634-24B7-47E4-A05A-592CE574657E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99BD7634-24B7-47E4-A05A-592CE574657E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99BD7634-24B7-47E4-A05A-592CE574657E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204DF6CF-F5DB-4A76-A233-314E8D057F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204DF6CF-F5DB-4A76-A233-314E8D057F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204DF6CF-F5DB-4A76-A233-314E8D057F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204DF6CF-F5DB-4A76-A233-314E8D057F24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -166,6 +206,14 @@ Global
 		{C756A3FD-C103-432D-8BC5-4DD552BD894D} = {7F722F33-AB2D-4B28-BF4F-B25C15523855}
 		{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4} = {7F722F33-AB2D-4B28-BF4F-B25C15523855}
 		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB} = {7F722F33-AB2D-4B28-BF4F-B25C15523855}
+		{D55D41B3-3620-46CB-AF85-90ED7B2A722F} = {29EE33B2-7067-4FCE-8E19-331B927CBA4F}
+		{F18569AD-426C-47A2-B1C6-A3085F3D255E} = {29EE33B2-7067-4FCE-8E19-331B927CBA4F}
+		{D91E25AB-92CB-44E1-98FD-737CE9C00BCF} = {F18569AD-426C-47A2-B1C6-A3085F3D255E}
+		{993E69E8-B82C-48FD-A98A-9C08E4F0F8BA} = {F18569AD-426C-47A2-B1C6-A3085F3D255E}
+		{D66CE3D5-B737-4BAC-A4B8-0D0AC5B45B2E} = {F18569AD-426C-47A2-B1C6-A3085F3D255E}
+		{16343960-C3BD-4FC0-A2B9-459182C913D1} = {D55D41B3-3620-46CB-AF85-90ED7B2A722F}
+		{99BD7634-24B7-47E4-A05A-592CE574657E} = {D55D41B3-3620-46CB-AF85-90ED7B2A722F}
+		{204DF6CF-F5DB-4A76-A233-314E8D057F24} = {D55D41B3-3620-46CB-AF85-90ED7B2A722F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EE75BCA-DBD6-4A1A-B223-596FA3FBA03C}

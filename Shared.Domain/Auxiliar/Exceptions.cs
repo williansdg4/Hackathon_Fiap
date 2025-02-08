@@ -2,7 +2,7 @@
 
 namespace Shared.Domain.Auxiliar
 {
-    public class StatusCodeException(string? message, HttpStatusCode statusCode) : Exception(message)
+    public class StatusCodeException(string? message, HttpStatusCode statusCode = HttpStatusCode.InternalServerError) : Exception(message)
     {
         public virtual HttpStatusCode StatusCode { get; private set; } = statusCode;
     }
