@@ -1,4 +1,5 @@
 using System.Text;
+using AppointmentConsumer.Domain.Usecases;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
@@ -9,8 +10,8 @@ using Shared.Rabbit.Options;
 namespace AppointmentConsumer.Worker
 {
     public class Consumer<T>(ILogger<Consumer<T>> _logger, IConnection _connection,
-        IOptions<ConsumerOptions<T>> _options) : BackgroundService
-        where T : BaseModel
+        IOptions<ConsumerOptions<T>> _options, IAppointmentConsumerUsecase<T> _usecase) : BackgroundService
+        where T : AppointmentModel
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -42,26 +43,26 @@ namespace AppointmentConsumer.Worker
                 var message = Encoding.UTF8.GetString(e.Body.ToArray());
                 var messageBody = JsonConvert.DeserializeObject<T>(message);
 
-                if (typeof(T) == typeof(PatientModel))
+                if (typeof(T) == typeof(InsertAppointmentModel))
                 {
-                    //chamadas de método para Patient
+                    if (messageBody != null)
+                    {
+                        _usecase.Insert(messageBody);
+                    }
+                    channel.BasicAck(e.DeliveryTag, false);
                 }
-                else if (typeof(T) == typeof(DoctorModel))
+                else if (typeof(T) == typeof(UpdateAppointmentModel))
                 {
-                    //chamadas de método para Doctor
-                }
-                else if (typeof(T) == typeof(AppointmentModel))
-                {
-                    //chamadas de método para AppointmentModel
-                }
-                else if (typeof(T) == typeof(TimeScheduleModel))
-                {
-                    //chamadas de método para TimeScheduleModel
+                    if (messageBody != null)
+                    {
+                        _usecase.Update(messageBody);
+                    }
+                    channel.BasicAck(e.DeliveryTag, false);
                 }
 
                 channel.BasicAck(e.DeliveryTag, false);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 var countRetries = GetRetryCount(e.BasicProperties);
                 if (countRetries <= _options.Value.Retries)

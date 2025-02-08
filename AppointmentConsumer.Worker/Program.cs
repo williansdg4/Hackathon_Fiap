@@ -2,6 +2,9 @@ using Shared.Rabbit.Configurations;
 using Shared.Infrastructure.Configurations;
 using Shared.Rabbit.Infra;
 using AppointmentConsumer.Worker.Configurations;
+using AppointmentConsumer.Domain.Configurations;
+using Shared.Domain.Models;
+using AppointmentConsumer.Infrastructure.Configurations;
 
 var builder = Host.CreateApplicationBuilder(args);
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
@@ -15,10 +18,11 @@ builder.Services.AddRabbitMq(options =>
     options.VirtualHost = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.VirtualHost);
 });
 
-builder.Services.AddPatientQueue(builder.Configuration);
-builder.Services.AddDoctorQueue(builder.Configuration);
-builder.Services.AddAppointmentQueue(builder.Configuration);
-builder.Services.AddTimeScheduleQueue(builder.Configuration);
+builder.Services.AddInsertAppointmentQueue(builder.Configuration);
+builder.Services.AddUpdateAppointmentQueue(builder.Configuration);
+builder.Services.AddDomain<InsertAppointmentModel>();
+builder.Services.AddDomain<UpdateAppointmentModel>();
+builder.Services.AddRepository();
 builder.Services.DbConfiguration(configuration.GetConnectionString("HealthMedScheduling") ?? string.Empty);
 
 var host = builder.Build();
