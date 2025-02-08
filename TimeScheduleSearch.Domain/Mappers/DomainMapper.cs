@@ -7,6 +7,7 @@ namespace TimeScheduleSearch.Domain.Mappers
     {
         public static GetTimeSchedule FromEntity(this TimeSchedule entity) => new()
         {
+            Id = entity.Id,
             Date = entity.AvailableDate,
             Hour = entity.AvailableHours,
             DoctorName = entity.Doctor.Name,
