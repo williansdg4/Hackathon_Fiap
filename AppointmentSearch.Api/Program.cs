@@ -41,7 +41,7 @@ builder.Services.ConfigurationRepository();
 builder.Services.ConfigurationServices();
 builder.Services.ConfigurationDomain();
 
-builder.Services.DbConfiguration(configuration.GetConnectionString("TechChallenge") ?? string.Empty);
+builder.Services.DbConfiguration(configuration.GetConnectionString("HealthMedScheduling") ?? string.Empty);
 builder.Services.AddJwtAuthentication();
 
 var app = builder.Build();

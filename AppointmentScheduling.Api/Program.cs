@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 
-builder.Services.DbConfiguration(configuration.GetConnectionString("TechChallenge") ?? string.Empty);
+builder.Services.DbConfiguration(configuration.GetConnectionString("HealthMedScheduling") ?? string.Empty);
 builder.Services.AddJwtAuthentication();
 
 
