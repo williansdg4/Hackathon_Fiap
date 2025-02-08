@@ -5,7 +5,7 @@
         public int Crm { get; set; }
         public string Specialty { get; set; }
         public string Name { get; set; }
-        public string Password { get; set; }
+        public string Email { get; set; }
         public virtual ICollection<TimeSchedule> TimeSchedule { get; set; }
         public virtual ICollection<Appointment> Appointment { get; set; }
     }

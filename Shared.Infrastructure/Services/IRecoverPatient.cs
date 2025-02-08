@@ -3,7 +3,7 @@ using Shared.Infrastructure.Repositories;
 
 namespace Shared.Infrastructure.Services
 {
-    public interface IRecoverUser : IRepository<Patient>
+    public interface IRecoverPatient : IRepository<Patient>
     {
     }
 }

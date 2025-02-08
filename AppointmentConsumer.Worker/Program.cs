@@ -20,7 +20,8 @@ builder.Services.AddRabbitMq(options =>
 });
 
 builder.Services.AddSingleton<IEmailService, EmailService>();
-builder.Services.AddSingleton<IRecoverUser, RecoverUser>();
+builder.Services.AddSingleton<IRecoverPatient, RecoverPatient>();
+builder.Services.AddSingleton<IRecoverDoctor, RecoverDoctor>();
 builder.Services.AddInsertAppointmentQueue(builder.Configuration);
 builder.Services.AddUpdateAppointmentQueue(builder.Configuration);
 builder.Services.AddDomain<InsertAppointmentModel>();

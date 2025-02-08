@@ -2,6 +2,7 @@
 using Shared.Domain.Models;
 using Shared.Domain.Mappers;
 using Shared.Infrastructure.Services;
+using Shared.Domain.Enums;
 
 namespace AppointmentConsumer.Domain.Usecases
 {
@@ -19,11 +20,11 @@ namespace AppointmentConsumer.Domain.Usecases
                 if (check)
                 {
                     _repository.Insert(insertEntity);
-                    _emailService.SendEmailAsync("O horario escolhido foi agendado com sucesso!", insertEntity.IdPatient);
+                    _emailService.SendEmailAsync("O horario escolhido foi agendado com sucesso!", insertEntity.IdPatient, true);
                 }
                 else
                 {
-                    _emailService.SendEmailAsync("O horario escolhido está indisponível!", insertEntity.IdPatient);
+                    _emailService.SendEmailAsync("O horario escolhido está indisponível!", insertEntity.IdPatient, true);
                 }
             }
         }
@@ -33,7 +34,13 @@ namespace AppointmentConsumer.Domain.Usecases
             if (entity is UpdateAppointmentModel updateModel)
             {
                 _repository.AppointmentUpdate(updateModel.ToEntity());
-                _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", updateModel.IdPatient);
+
+                if (updateModel.Status == AppointmentStatusEnum.Cancelled)
+                {
+                    _emailService.SendEmailAsync($"Atendimento cancellado: {updateModel.CancellationJustification}!", updateModel.IdDoctor, false);
+                }
+                
+                _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", updateModel.IdPatient, true);
             }
         }
     }
