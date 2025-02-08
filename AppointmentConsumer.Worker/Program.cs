@@ -5,6 +5,7 @@ using AppointmentConsumer.Worker.Configurations;
 using AppointmentConsumer.Domain.Configurations;
 using Shared.Domain.Models;
 using AppointmentConsumer.Infrastructure.Configurations;
+using Shared.Infrastructure.Services;
 
 var builder = Host.CreateApplicationBuilder(args);
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
@@ -18,6 +19,8 @@ builder.Services.AddRabbitMq(options =>
     options.VirtualHost = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.VirtualHost);
 });
 
+builder.Services.AddSingleton<IEmailService, EmailService>();
+builder.Services.AddSingleton<IRecoverUser, RecoverUser>();
 builder.Services.AddInsertAppointmentQueue(builder.Configuration);
 builder.Services.AddUpdateAppointmentQueue(builder.Configuration);
 builder.Services.AddDomain<InsertAppointmentModel>();
