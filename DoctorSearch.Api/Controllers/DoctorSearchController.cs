@@ -26,7 +26,7 @@ namespace DoctorSearch.Api.Controllers
         /// <param name="specialty"></param>
         /// <returns></returns>
         [HttpGet("[action]"), Authorize(Roles = Roles.Patient)]
-        public IActionResult Authenticate(string specialty)
+        public IActionResult Search(string specialty)
         {
             var list = _doctorSearchUsecase.Get(specialty);
             return Ok(list);

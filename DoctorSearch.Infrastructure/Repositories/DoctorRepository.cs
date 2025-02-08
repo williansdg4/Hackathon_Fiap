@@ -9,7 +9,8 @@ namespace DoctorSearch.Infrastructure.Repositories
     public class DoctorRepository(ApplicationDbContext context) : EFRepository<Doctor>(context), IDoctorRepository
     {
         public override IQueryable<Doctor> DbSetIncluded() =>
-            _dbSet.Include(d => d.TimeSchedule);
+            _dbSet.Include(d => d.TimeSchedule)
+                    .ThenInclude(d => d.Appointment);
         
     }
 }
