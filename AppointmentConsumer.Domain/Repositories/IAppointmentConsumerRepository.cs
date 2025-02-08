@@ -6,5 +6,6 @@ namespace AppointmentConsumer.Domain.Repositories
     public interface IAppointmentConsumerRepository : IRepository<Appointment>
     {
         void AppointmentUpdate(Appointment entity);
+        bool AppointmentCheck(Appointment entity);
     }
 }
