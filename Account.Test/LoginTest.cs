@@ -1,4 +1,5 @@
 using Account.Domain.Models;
+using Shared.Domain.Auxiliar;
 using System.ComponentModel.DataAnnotations;
 
 namespace Account.Test
@@ -22,7 +23,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("User") && v.ErrorMessage.Contains("User is required")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("User") && v.ErrorMessage.Contains(ErrorMessages.UserRequired)));
         }
 
         [Fact]
@@ -34,7 +35,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Password") && v.ErrorMessage.Contains("Password is required")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Password") && v.ErrorMessage.Contains(ErrorMessages.PasswordRequired)));
         }
     }
 }

@@ -1,3 +1,4 @@
+using Shared.Domain.Auxiliar;
 using System.ComponentModel.DataAnnotations;
 using TimeScheduleRegister.Domain.Models;
 
@@ -22,7 +23,7 @@ namespace TimeSchedulerRegister.Test
                 Hour = string.Empty,                                
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Date") && v.ErrorMessage.Contains("Invalid Date")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Date") && v.ErrorMessage.Contains(ErrorMessages.InvalidDate)));
         }
 
         public void InsertTimeSchedule_Validate_Date_MaxDate()
@@ -32,8 +33,8 @@ namespace TimeSchedulerRegister.Test
                 Date = DateTime.MaxValue,
                 Hour = string.Empty,                
             });
-
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Date") && v.ErrorMessage.Contains("Invalid Date")));
+            
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Date") && v.ErrorMessage.Contains(ErrorMessages.InvalidDate)));
         }
 
         [Fact]
@@ -45,7 +46,7 @@ namespace TimeSchedulerRegister.Test
                 Hour = string.Empty,                
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains("Hour is required")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains(ErrorMessages.HourRequired)));
         }
 
         [Fact]
@@ -57,7 +58,7 @@ namespace TimeSchedulerRegister.Test
                 Hour = "1430",                
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains("Invalid Hour")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains(ErrorMessages.InvalidHour)));
         }
 
         [Fact]
@@ -69,7 +70,7 @@ namespace TimeSchedulerRegister.Test
                 Hour = "26:30",                
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains("Invalid Hour")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains(ErrorMessages.InvalidHour)));
         }
 
         [Fact]
@@ -80,8 +81,8 @@ namespace TimeSchedulerRegister.Test
                 Date = DateTime.MinValue,
                 Hour = "14:99",                
             });
-
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains("Invalid Hour")));
+            
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Hour") && v.ErrorMessage.Contains(ErrorMessages.InvalidHour)));
         }
     }
 }

@@ -1,4 +1,5 @@
 using Account.Domain.Models;
+using Shared.Domain.Auxiliar;
 using System.ComponentModel.DataAnnotations;
 
 namespace Account.Test
@@ -26,7 +27,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Cpf") && v.ErrorMessage.Contains("CPF is required")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Cpf") && v.ErrorMessage.Contains(ErrorMessages.CpfRequired)));
         }
 
         [Fact]
@@ -40,7 +41,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Cpf") && v.ErrorMessage.Contains("Invalid CPF")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Cpf") && v.ErrorMessage.Contains(ErrorMessages.InvalidCpf)));
         }
 
         [Fact]
@@ -54,7 +55,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Cpf") && v.ErrorMessage.Contains("Invalid CPF")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Cpf") && v.ErrorMessage.Contains(ErrorMessages.InvalidCpf)));
         }
 
         #endregion
@@ -72,7 +73,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains("E-mail is required")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains(ErrorMessages.EmailRequired)));
         }
 
         [Fact]
@@ -85,8 +86,8 @@ namespace Account.Test
                 Email = "mail.com",
                 Password = string.Empty,
             });
-
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains("Invalid E-mail")));
+            
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains(ErrorMessages.InvalidEmail)));
         }
 
         [Fact]
@@ -100,7 +101,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains("Invalid E-mail")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains(ErrorMessages.InvalidEmail)));
         }
 
         [Fact]
@@ -114,7 +115,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains("Invalid E-mail")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Email") && v.ErrorMessage.Contains(ErrorMessages.InvalidEmail)));
         }
 
         #endregion
@@ -130,7 +131,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Name") && v.ErrorMessage.Contains("Name is required")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Name") && v.ErrorMessage.Contains(ErrorMessages.NameRequired)));
         }
 
         [Fact]
@@ -144,7 +145,7 @@ namespace Account.Test
                 Password = string.Empty,
             });
 
-            Assert.True(errors.Any(v => v.MemberNames.Contains("Password") && v.ErrorMessage.Contains("Password is required")));
+            Assert.True(errors.Any(v => v.MemberNames.Contains("Password") && v.ErrorMessage.Contains(ErrorMessages.PasswordRequired)));
         }
 
 

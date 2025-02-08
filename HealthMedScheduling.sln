@@ -77,6 +77,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Test", "Account.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSchedulerRegister.Test", "TimeSchedulerRegister.Test\TimeSchedulerRegister.Test.csproj", "{24F3C2E3-D279-4A6C-8DB7-307CF3CCF2F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentScheduling.Test", "AppointmentScheduling.Test\AppointmentScheduling.Test.csproj", "{C09D6274-ED6A-418F-A12D-2065AAB45C72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +189,10 @@ Global
 		{24F3C2E3-D279-4A6C-8DB7-307CF3CCF2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F3C2E3-D279-4A6C-8DB7-307CF3CCF2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F3C2E3-D279-4A6C-8DB7-307CF3CCF2F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C09D6274-ED6A-418F-A12D-2065AAB45C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C09D6274-ED6A-418F-A12D-2065AAB45C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C09D6274-ED6A-418F-A12D-2065AAB45C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C09D6274-ED6A-418F-A12D-2065AAB45C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -228,6 +234,7 @@ Global
 		{204DF6CF-F5DB-4A76-A233-314E8D057F24} = {D55D41B3-3620-46CB-AF85-90ED7B2A722F}
 		{A32BF539-9581-41D2-B3BB-9555E500C980} = {C38097F7-B372-43A7-B9D2-3342E364AFD6}
 		{24F3C2E3-D279-4A6C-8DB7-307CF3CCF2F6} = {F18569AD-426C-47A2-B1C6-A3085F3D255E}
+		{C09D6274-ED6A-418F-A12D-2065AAB45C72} = {2692B8E2-6DD2-43F1-B486-5BC896BA9151}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EE75BCA-DBD6-4A1A-B223-596FA3FBA03C}

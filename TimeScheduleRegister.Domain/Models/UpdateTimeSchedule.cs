@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Shared.Domain.Auxiliar;
+using System.ComponentModel.DataAnnotations;
 
 namespace TimeScheduleRegister.Domain.Models
 {
@@ -6,12 +7,11 @@ namespace TimeScheduleRegister.Domain.Models
     {
         public int Id { get; set; }
 
-        [Range(typeof(DateTime), "2025-01-01", "2099-01-01", ErrorMessage = "Invalid Date")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Date is required")]
+        [Range(typeof(DateTime), "2025-01-01", "2099-01-01", ErrorMessage = ErrorMessages.InvalidDate)]
         public DateTime Date { get; set; }
 
-        [RegularExpression("([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", ErrorMessage = "Invalid Hour")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Hour is required")]
+        [RegularExpression("([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", ErrorMessage = ErrorMessages.InvalidHour)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = ErrorMessages.HourRequired)]
         public required string Hour { get; set; }
     }
 }
