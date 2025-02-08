@@ -13,41 +13,23 @@
 
         public static class Queues
         {
-            public static class PatientQueue
+            public static class UpdateQueue
             {
                 public const string ExchangeName = "HealthMedSchedulingExchange";
-                public const string QueueName = "PatientQueueName";
-                public const string RoutingKey = "PatientRoutingKey";
-                public const string ThreadCount = "PatientThreadCount";
-                public const string Retries = "PatientRetries";
-                public const string AwaitTime = "PatientAwaitTime";
+                public const string QueueName = "UpdatedQueueName";
+                public const string RoutingKey = "UpdatedRoutingKey";
+                public const string ThreadCount = "UpdatedThreadCount";
+                public const string Retries = "UpdatedRetries";
+                public const string AwaitTime = "UpdatedAwaitTime";
             }
-            public static class DoctorQueue
+            public static class InsertQueue
             {
-                public const string ExchangeNmae = "HealthMedSchedulingExchange";
-                public const string QueueName = "DoctorQueueName";
-                public const string RoutingKey = "DoctorRoutingKey";
-                public const string ThreadCount = "DoctorThreadCount";
-                public const string Retries = "DoctorRetries";
-                public const string AwaitTime = "DoctorAwaitTime";
-            }
-            public static class AppointmentQueue
-            {
-                public const string ExchangeNmae = "HealthMedSchedulingExchange";
-                public const string QueueName = "AppointmentQueueName";
-                public const string RoutingKey = "AppointmentRoutingKey";
-                public const string ThreadCount = "AppointmentThreadCount";
-                public const string Retries = "AppointmentRetries";
-                public const string AwaitTime = "AppointmentAwaitTime";
-            }
-            public static class TimeScheduleQueue
-            {
-                public const string ExchangeNmae = "HealthMedSchedulingExchange";
-                public const string QueueName = "TimeScheduleQueueName";
-                public const string RoutingKey = "TimeScheduleRoutingKey";
-                public const string ThreadCount = "TimeScheduleThreadCount";
-                public const string Retries = "TimeScheduleRetries";
-                public const string AwaitTime = "TimeScheduleAwaitTime";
+                public const string ExchangeName = "HealthMedSchedulingExchange";
+                public const string QueueName = "InsertedQueueName";
+                public const string RoutingKey = "InsertedRoutingKey";
+                public const string ThreadCount = "InsertedThreadCount";
+                public const string Retries = "InsertedRetries";
+                public const string AwaitTime = "InsertedAwaitTime";
             }
         }
     }

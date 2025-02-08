@@ -24,7 +24,7 @@ namespace Shared.Infrastructure.DBContext
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            _connString = configuration.GetConnectionString("TechChallenge")
+            _connString = configuration.GetConnectionString("HealthMedScheduling")
                 ?? throw new Exception("String de conexão não informada");
         }
 

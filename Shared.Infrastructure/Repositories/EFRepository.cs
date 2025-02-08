@@ -17,6 +17,8 @@ namespace Shared.Infrastructure.Repositories
 
         public void Delete(T entity)
         {
+            var entity = Get(id);
+
             if (entity == null)
                 return;
 
