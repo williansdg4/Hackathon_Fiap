@@ -26,5 +26,9 @@ namespace Shared.Infrastructure.Configurations
                 options.Password.RequireLowercase = false;
             });
         }
+        public static void DbConfigurationConsumer(this IServiceCollection services, string connectionString)
+        {
+            services.AddDbContext<ApplicationDbContextConsumer>(options => options.UseSqlServer(connectionString), ServiceLifetime.Singleton);
+        }
     }
 }

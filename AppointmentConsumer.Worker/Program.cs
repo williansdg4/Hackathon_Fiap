@@ -26,7 +26,7 @@ builder.Services.AddUpdateAppointmentQueue(builder.Configuration);
 builder.Services.AddDomain<InsertAppointmentModel>();
 builder.Services.AddDomain<UpdateAppointmentModel>();
 builder.Services.AddRepository();
-builder.Services.DbConfiguration(configuration.GetConnectionString("HealthMedScheduling") ?? string.Empty);
+builder.Services.DbConfigurationConsumer(configuration.GetConnectionString("HealthMedScheduling") ?? string.Empty);
 
 var host = builder.Build();
 host.Run();
