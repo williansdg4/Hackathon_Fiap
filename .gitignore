@@ -370,3 +370,6 @@ FodyWeavers.xsd
 /AppointmentSearch.Api/obj/Debug/net8.0/AppointmentSearch.Api.AssemblyInfo.cs
 /AppointmentSearch.Api/obj/Debug/net8.0/AppointmentSearch.Api.AssemblyInfoInputs.cache
 /AppointmentSearch.Api/obj/Debug/net8.0/AppointmentSearch.Api.csproj.AssemblyReference.cache
+/AppointmentSearch.Api/obj/AppointmentSearch.Api.csproj.nuget.dgspec.json
+/AppointmentSearch.Api/obj/project.assets.json
+/AppointmentSearch.Api/obj/project.nuget.cache

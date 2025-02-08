@@ -1,9 +1,8 @@
 ﻿using DoctorSearch.Domain.Mappers;
 using DoctorSearch.Domain.Models;
 using DoctorSearch.Domain.Repositories;
-using DoctorSearch.Domain.Usecases;
 
-namespace Account.Domain.Usecases
+namespace DoctorSearch.Domain.Usecases
 {
     public class DoctorSearchUsecase(IDoctorRepository _repository) : IDoctorSearchUsecase
     {

@@ -16,6 +16,7 @@ namespace Shared.Infrastructure.Configurations
             builder.Property(d => d.Password).HasColumnType("VARCHAR(10)").IsRequired();
             builder.Property(d => d.Specialty).HasColumnType("VARCHAR(50)").IsRequired();
             builder.HasMany(d => d.TimeSchedule).WithOne(d => d.Doctor).HasForeignKey(d => d.IdDoctor);
+            builder.HasMany(d => d.Appointment).WithOne(d => d.Doctor).HasForeignKey(d => d.IdDoctor).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

@@ -8,5 +8,6 @@
         public string AvailableHours { get; set; }
 
         public virtual Doctor Doctor { get; set; }
+        public virtual ICollection<Appointment> Appointment { get; set; }
     }
 }

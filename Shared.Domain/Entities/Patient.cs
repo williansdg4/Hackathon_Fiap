@@ -4,5 +4,6 @@
     {
         public string Cpf { get; set; }
         public string Email { get; set; }
+        public virtual ICollection<Appointment> Appointment { get; set; }
     }
 }

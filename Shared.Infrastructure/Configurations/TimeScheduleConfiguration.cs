@@ -14,6 +14,7 @@ namespace Shared.Infrastructure.Configurations
             builder.Property(d => d.IdDoctor).HasColumnType("INT").IsRequired();
             builder.Property(d => d.AvailableDate).HasColumnType("DATE").IsRequired();
             builder.Property(d => d.AvailableHours).HasColumnType("VARCHAR(5)").IsRequired();
+            builder.HasMany(d => d.Appointment).WithOne(d => d.TimeSchedule).HasForeignKey(d => d.IdTimeSchedule).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
