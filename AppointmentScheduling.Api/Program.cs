@@ -2,6 +2,10 @@ using Microsoft.OpenApi.Models;
 using Shared.Infrastructure.Authentication;
 using System.Reflection;
 using Shared.Infrastructure.Configurations;
+using AppointmentScheduling.Domain.Configurations;
+using AppointmentScheduling.Infrastructure.Configurations;
+using Shared.Rabbit.Configurations;
+using Shared.Rabbit.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
@@ -17,9 +21,38 @@ builder.Services.AddSwaggerGen(c =>
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "Token from authenticate",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+    {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference{ Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+        }, new List<string>()
+    } });
 });
 
-builder.Services.DbConfiguration(configuration.GetConnectionString("TechChallenge") ?? string.Empty);
+builder.Services.ConfigurationRabbitProducer(options =>
+{
+    options.HostName = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.Host);
+    options.Port = builder.Configuration.GetValue<int>(ApplicationVariables.Rabbit.Port);
+    options.Username = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.User);
+    options.Password = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.Password);
+    options.VirtualHost = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.VirtualHost);
+});
+
+builder.Services.AddDomain();
+builder.Services.AddInfrastructure();
+
+builder.Services.DbConfiguration(configuration.GetConnectionString("HealthMedScheduling") ?? string.Empty);
 builder.Services.AddJwtAuthentication();
 
 
@@ -34,6 +67,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
