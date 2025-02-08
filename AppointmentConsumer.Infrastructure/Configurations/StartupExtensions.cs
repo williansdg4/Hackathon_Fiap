@@ -8,7 +8,7 @@ namespace AppointmentConsumer.Infrastructure.Configurations
     {
         public static void AddRepository(this IServiceCollection services)
         {
-            services.AddScoped<IAppointmentConsumerRepository, AppointmentConsumerRepository>();
+            services.AddSingleton<IAppointmentConsumerRepository, AppointmentConsumerRepository>();
         }
     }
 }

@@ -38,17 +38,25 @@ namespace Shared.Infrastructure.Services
 
             if (patient != null)
             {
-                var email = new MimeMessage();
-                email.From.Add(new MailboxAddress("Sistema", _emailSender));
-                email.To.Add(new MailboxAddress("Admin", patient.Email));
-                email.Subject = "Agendamento de consulta";
-                email.Body = new TextPart("plain") { Text = $"Olá {patient.Name}.\n\n{message}" };
+                try
+                {
+                    var email = new MimeMessage();
+                    email.From.Add(new MailboxAddress("Sistema", _emailSender));
+                    email.To.Add(new MailboxAddress("Admin", patient.Email));
+                    email.Subject = "Agendamento de consulta";
+                    email.Body = new TextPart("plain") { Text = $"Olá {patient.Name}.\n\n{message}" };
 
-                using var smtp = new SmtpClient();
-                await smtp.ConnectAsync(_smtpServer, _smtpPort, MailKit.Security.SecureSocketOptions.StartTls);
-                await smtp.AuthenticateAsync(_emailSender, _emailPassword);
-                await smtp.SendAsync(email);
-                await smtp.DisconnectAsync(true);
+                    using var smtp = new SmtpClient();
+                    await smtp.ConnectAsync(_smtpServer, _smtpPort, MailKit.Security.SecureSocketOptions.StartTls);
+                    await smtp.AuthenticateAsync(_emailSender, _emailPassword);
+                    await smtp.SendAsync(email);
+                    await smtp.DisconnectAsync(true);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                
             }
         }
     }

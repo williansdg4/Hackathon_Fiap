@@ -19,8 +19,8 @@ builder.Services.AddRabbitMq(options =>
     options.VirtualHost = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.VirtualHost);
 });
 
-builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.AddScoped<IRecoverUser, RecoverUser>();
+builder.Services.AddSingleton<IEmailService, EmailService>();
+builder.Services.AddSingleton<IRecoverUser, RecoverUser>();
 builder.Services.AddInsertAppointmentQueue(builder.Configuration);
 builder.Services.AddUpdateAppointmentQueue(builder.Configuration);
 builder.Services.AddDomain<InsertAppointmentModel>();
