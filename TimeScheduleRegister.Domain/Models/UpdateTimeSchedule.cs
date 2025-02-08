@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
 namespace TimeScheduleRegister.Domain.Models
 {
@@ -12,6 +11,7 @@ namespace TimeScheduleRegister.Domain.Models
         public DateTime Date { get; set; }
 
         [RegularExpression("([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", ErrorMessage = "Invalid Hour")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Hour is required")]
         public required string Hour { get; set; }
     }
 }

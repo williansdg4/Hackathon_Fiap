@@ -47,7 +47,7 @@ namespace Account.Api.Controllers
         [HttpPost("Doctor/Register")]
         public IActionResult CreateDoctorUser(InsertDoctorModel model)
         {
-            _accountManager.CreateUser(model.User, model.Email, model.Password, Roles.Doctor);
+            _accountManager.CreateUser(model.Crm.ToString(), model.Email, model.Password, Roles.Doctor);
             _doctorRegistrationUsecase.Create(model);
 
             return Ok();
@@ -61,7 +61,7 @@ namespace Account.Api.Controllers
         [HttpPost("Patient/Register")]
         public IActionResult CreatePatientUser(InsertPatientModel model)
         {
-            _accountManager.CreateUser(model.User, model.Email, model.Password, Roles.Patient);
+            _accountManager.CreateUser(model.Cpf, model.Email, model.Password, Roles.Patient);
             _patientRegistrationUsecase.Create(model);
             return Ok();
         }
