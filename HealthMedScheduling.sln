@@ -43,11 +43,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Rabbit", "Shared.Rab
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccountApi", "AccountApi", "{C38097F7-B372-43A7-B9D2-3342E364AFD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Api", "Account.Api\Account.Api.csproj", "{BB89785D-59FC-485B-8527-2F18A1B0B141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Api", "Account.Api\Account.Api.csproj", "{BB89785D-59FC-485B-8527-2F18A1B0B141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Infrastructure", "Account.Infrastructure\Account.Infrastructure.csproj", "{8C239596-020B-44B9-AA26-B8566976D08A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Infrastructure", "Account.Infrastructure\Account.Infrastructure.csproj", "{8C239596-020B-44B9-AA26-B8566976D08A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account.Domain", "Account.Domain\Account.Domain.csproj", "{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Account.Domain", "Account.Domain\Account.Domain.csproj", "{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoctorSearchApi", "DoctorSearchApi", "{7F722F33-AB2D-4B28-BF4F-B25C15523855}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorSearch.Api", "DoctorSearch.Api\DoctorSearch.Api.csproj", "{C756A3FD-C103-432D-8BC5-4DD552BD894D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorSearch.Domain", "DoctorSearch.Domain\DoctorSearch.Domain.csproj", "{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorSearch.Infrastructure", "DoctorSearch.Infrastructure\DoctorSearch.Infrastructure.csproj", "{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +123,18 @@ Global
 		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C756A3FD-C103-432D-8BC5-4DD552BD894D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C756A3FD-C103-432D-8BC5-4DD552BD894D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C756A3FD-C103-432D-8BC5-4DD552BD894D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C756A3FD-C103-432D-8BC5-4DD552BD894D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +162,10 @@ Global
 		{BB89785D-59FC-485B-8527-2F18A1B0B141} = {C38097F7-B372-43A7-B9D2-3342E364AFD6}
 		{8C239596-020B-44B9-AA26-B8566976D08A} = {C38097F7-B372-43A7-B9D2-3342E364AFD6}
 		{9A7AA464-9DB8-4E02-A89C-03C34AA845BB} = {C38097F7-B372-43A7-B9D2-3342E364AFD6}
+		{7F722F33-AB2D-4B28-BF4F-B25C15523855} = {29EE33B2-7067-4FCE-8E19-331B927CBA4F}
+		{C756A3FD-C103-432D-8BC5-4DD552BD894D} = {7F722F33-AB2D-4B28-BF4F-B25C15523855}
+		{5223FC8C-8FA3-4B12-93A9-1B74E58E99F4} = {7F722F33-AB2D-4B28-BF4F-B25C15523855}
+		{4EB109F0-ED41-47E0-8356-2BF161FB6EFB} = {7F722F33-AB2D-4B28-BF4F-B25C15523855}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EE75BCA-DBD6-4A1A-B223-596FA3FBA03C}

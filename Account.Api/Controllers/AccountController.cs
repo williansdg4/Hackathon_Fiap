@@ -1,35 +1,13 @@
+using Account.Api.Auxiliar;
 using Account.Domain.Models;
 using Account.Domain.Usecases;
 using Account.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Shared.Domain.Auxiliar;
 using Shared.Domain.Enums;
-using System.Net;
-using System.Security.Claims;
 
 namespace Account.Api.Controllers
 {
-    public class ExceptionHandler : ExceptionFilterAttribute
-    {
-        public override void OnException(ExceptionContext context)
-        {
-            if (context.Exception is StatusCodeException excetion)
-            {
-                var result = new ObjectResult(new { excetion.Message })
-                {
-                    StatusCode = (int)excetion.StatusCode
-                };
-
-                context.Result = result;
-                return;
-            }
-
-            base.OnException(context);
-        }
-    }
-
     [ApiController, ExceptionHandler, Route("[controller]"), AllowAnonymous]
     public class AccountController : ControllerBase
     {
@@ -58,7 +36,6 @@ namespace Account.Api.Controllers
         [HttpPost("[action]")]
         public IActionResult Authenticate(LoginModel model)
         {
-
             return Ok(new LoginResponseModel { Token = _accountManager.Authenticate(model.User, model.Password) });
         }
 

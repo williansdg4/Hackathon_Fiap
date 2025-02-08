@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/AppointmentConsumer.Worker/obj/Debug/net8.0/AppointmentConsumer.Worker.AssemblyInfo.cs
+/AppointmentConsumer.Worker/obj/Debug/net8.0/AppointmentConsumer.Worker.AssemblyInfoInputs.cache
+/AppointmentConsumer.Worker/obj/Debug/net8.0/AppointmentConsumer.Worker.csproj.AssemblyReference.cache
+/AppointmentScheduling.Api/obj/Debug/net8.0/AppointmentScheduling.Api.AssemblyInfo.cs
+/AppointmentScheduling.Api/obj/Debug/net8.0/AppointmentScheduling.Api.AssemblyInfoInputs.cache
+/AppointmentScheduling.Api/obj/Debug/net8.0/AppointmentScheduling.Api.csproj.AssemblyReference.cache
+/AppointmentSearch.Api/obj/Debug/net8.0/AppointmentSearch.Api.AssemblyInfo.cs
+/AppointmentSearch.Api/obj/Debug/net8.0/AppointmentSearch.Api.AssemblyInfoInputs.cache
+/AppointmentSearch.Api/obj/Debug/net8.0/AppointmentSearch.Api.csproj.AssemblyReference.cache

@@ -2,8 +2,8 @@ using Microsoft.OpenApi.Models;
 using System.Reflection;
 using Shared.Infrastructure.Authentication;
 using Shared.Infrastructure.Configurations;
-using Account.Infrastructure.Configurations;
-using Account.Domain.Configurations;
+using DoctorSearch.Infrastructure.Configurations;
+using DoctorSearch.Domain.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
