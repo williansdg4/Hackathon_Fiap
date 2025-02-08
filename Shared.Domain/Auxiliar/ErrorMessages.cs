@@ -28,9 +28,5 @@ namespace Shared.Domain.Auxiliar
         public const string HourRequired = "Hora é obrigatória";
         public const string InvalidDate = "Data inválida";
         public const string InvalidHour = "Hora inválida";
-
-
-
-
     }
 }

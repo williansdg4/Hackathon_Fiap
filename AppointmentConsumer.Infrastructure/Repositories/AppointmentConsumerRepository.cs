@@ -6,7 +6,7 @@ using Shared.Infrastructure.Repositories;
 
 namespace AppointmentConsumer.Infrastructure.Repositories
 {
-    public class AppointmentConsumerRepository(ApplicationDbContext context) : EFRepository<Appointment>(context),
+    public class AppointmentConsumerRepository(ApplicationDbContextConsumer context) : ConsumerRepository<Appointment>(context),
         IAppointmentConsumerRepository
     {
         public void AppointmentUpdate(Appointment entity)
