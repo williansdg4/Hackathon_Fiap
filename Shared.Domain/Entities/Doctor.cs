@@ -4,5 +4,6 @@
     {
         public int Crm { get; set; }
         public string Specialty { get; set; }
+        public virtual ICollection<TimeSchedule> TimeSchedule { get; set; }
     }
 }

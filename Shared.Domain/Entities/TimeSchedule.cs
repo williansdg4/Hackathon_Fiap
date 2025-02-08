@@ -6,5 +6,7 @@
         public int IdDoctor { get; set; }
         public DateTime AvailableDate { get; set; }
         public string AvailableHours { get; set; }
+
+        public virtual Doctor Doctor { get; set; }
     }
 }
