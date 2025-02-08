@@ -9,6 +9,7 @@ namespace TimeScheduleRegister.Infrastructure.Configurations
         public static void ConfigurationRepository(this IServiceCollection services)
         {
             services.AddScoped<ITimeScheduleRepository, TimeScheduleRepository>();
+            services.AddScoped<IDoctorRepository, DoctorRepository>();
         }
 
         public static void ConfigurationServices(this IServiceCollection services)

@@ -5,7 +5,7 @@ using TimeScheduleRegister.Domain.Repositories;
 
 namespace TimeScheduleRegister.Infrastructure.Repositories
 {
-    public class DoctorRepository(ApplicationDbContext context) : EFRepository<Doctor>(context), IDoctorRepository
+    public class TimeScheduleRepository(ApplicationDbContext context) : EFRepository<TimeSchedule>(context), ITimeScheduleRepository
     {        
     }
 }

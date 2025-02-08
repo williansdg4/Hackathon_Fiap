@@ -10,17 +10,17 @@ namespace TimeScheduleRegister.Domain.Usecases
         public void Create(InsertTimeSchedule model)
         {
             if (_repository.Exists(t => t.IdDoctor == model.IdDoctor && t.AvailableDate == model.Date && t.AvailableHours == model.Hour.ToString()))
-                throw new AlreadyExistsException("Schedule already exists");
+                throw new AlreadyExistsException(ErrorMessages.ScheduleExists);
 
             _repository.Insert(model.ToEntity());
         }
 
         public void Update(UpdateTimeSchedule model)
         {
-            var entity = _repository.Get(model.Id) ?? throw new NotFoundException("Schedule not found");
+            var entity = _repository.Get(model.Id) ?? throw new NotFoundException(ErrorMessages.ScheduleNotFound);
 
             if (_repository.Exists(t => t.IdDoctor == entity.IdDoctor && t.AvailableDate == model.Date && t.AvailableHours == model.Hour.ToString()))
-                throw new AlreadyExistsException("Schedule already exists");
+                throw new AlreadyExistsException(ErrorMessages.ScheduleExists);
 
             entity.AvailableHours = model.Hour;
             entity.AvailableDate = model.Date;

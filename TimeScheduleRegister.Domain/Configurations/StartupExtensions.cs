@@ -8,6 +8,7 @@ namespace TimeScheduleRegister.Domain.Configurations
         public static void ConfigurationDomain(this IServiceCollection services)
         {
             services.AddScoped<ITimeScheduleRegisterUsecase, TimeScheduleRegisterUsecase>();
+            services.AddScoped<IDoctorSearchUsecase, DoctorSearchUsecase>();
         }
     }
 }

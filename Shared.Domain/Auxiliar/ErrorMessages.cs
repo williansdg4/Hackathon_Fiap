@@ -28,5 +28,17 @@ namespace Shared.Domain.Auxiliar
         public const string HourRequired = "Hora é obrigatória";
         public const string InvalidDate = "Data inválida";
         public const string InvalidHour = "Hora inválida";
+
+        public const string ScheduleNotFound = "Horário não encontrado";        
+        public const string ScheduleExists = "Horário já cadastrado";
+
+        public const string DoctorExists = "Médico já cadastrado";
+        public const string DoctorNotFound = "Médico não encontrado";
+        public const string PatientExists = "Paciente já cadastrado";
+        public const string PatientNotFound = "Paciente não encontrado";
+        public const string UserExists = "Usuário já cadastrado";
+        public const string BlockedUser = "Usuário bloqueado";
+        public const string InvalidUserPassword = "Usuário ou senha inválidos";
+
     }
 }

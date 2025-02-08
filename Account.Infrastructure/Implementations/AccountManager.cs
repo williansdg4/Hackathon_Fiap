@@ -33,7 +33,7 @@ namespace Account.Infrastructure.Implementations
         {
             if (_userManager.FindByNameAsync(userName).Result != null ||
                 !string.IsNullOrEmpty(email) && _userManager.FindByEmailAsync(userName).Result != null)
-                throw new AlreadyExistsException("User already exists");
+                throw new AlreadyExistsException(ErrorMessages.UserExists);
 
             var user = new IdentityUser { UserName = userName, Email = email };
             var userResult = _userManager.CreateAsync(user, password).Result;
@@ -67,15 +67,15 @@ namespace Account.Infrastructure.Implementations
             var user =
                 _userManager.FindByNameAsync(userName).Result ??
                 _userManager.FindByEmailAsync(userName).Result ??
-                throw new UnauthorizedException("Invalid username or password");
+                throw new UnauthorizedException(ErrorMessages.InvalidUserPassword);
 
             var signinResult = _signInManager.CheckPasswordSignInAsync(user, password, true).Result;
 
             if (signinResult.IsLockedOut)
-                throw new UnauthorizedException("Blocked user");
+                throw new UnauthorizedException(ErrorMessages.BlockedUser);
 
             if (!signinResult.Succeeded)
-                throw new UnauthorizedException("Invalid username or password");
+                throw new UnauthorizedException(ErrorMessages.InvalidUserPassword);
 
             return _tokenGenerator.Generate(user);
 

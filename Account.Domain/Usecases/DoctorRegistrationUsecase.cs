@@ -10,7 +10,7 @@ namespace Account.Domain.Usecases
         public void Create(InsertDoctorModel model)
         {
             if (_repository.Exists(r => r.Crm == model.Crm))
-                throw new AlreadyExistsException("Doctor already exists");
+                throw new AlreadyExistsException(ErrorMessages.DoctorExists);
 
             _repository.Insert(model.ToEntity());
         }

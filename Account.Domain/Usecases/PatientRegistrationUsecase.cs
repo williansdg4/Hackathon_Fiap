@@ -15,7 +15,7 @@ namespace Account.Domain.Usecases
         public void Create(InsertPatientModel model)
         {
             if (_repository.Exists(r => r.Cpf == model.Cpf))
-                throw new AlreadyExistsException("Patient already exists");
+                throw new AlreadyExistsException(ErrorMessages.PatientExists);
 
             _repository.Insert(model.ToEntity());
         }
