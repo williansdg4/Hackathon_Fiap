@@ -2,9 +2,8 @@
 
 namespace Shared.Domain.Entities
 {
-    public class Appointment
+    public class Appointment : BaseEntity
     {
-        public int Id { get; set; }
         public int IdDoctor { get; set; }
         public int IdPatient { get; set; }
         public int IdTimeSchedule { get; set; }

@@ -1,8 +1,7 @@
 ﻿namespace Shared.Domain.Entities
 {
-    public class TimeSchedule
+    public class TimeSchedule : BaseEntity
     {
-        public int Id { get; set; }
         public int IdDoctor { get; set; }
         public DateTime AvailableDate { get; set; }
         public string AvailableHours { get; set; }
