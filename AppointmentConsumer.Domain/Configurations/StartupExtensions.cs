@@ -9,7 +9,7 @@ namespace AppointmentConsumer.Domain.Configurations
         public static void AddDomain<T>(this IServiceCollection services)
             where T : AppointmentModel
         {
-            services.AddSingleton<IAppointmentConsumerUsecase<T>, AppointmentConsumerUsecase<T>>();
+            services.AddScoped<IAppointmentConsumerUsecase<T>, AppointmentConsumerUsecase<T>>();
         }
     }
 }
