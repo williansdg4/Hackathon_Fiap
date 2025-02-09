@@ -10,11 +10,13 @@ namespace Shared.Infrastructure.Services
         private readonly int _smtpPort;
         private readonly string _emailSender;
         private readonly string _emailPassword;
-        private readonly IRecoverPatient _recoverEmailUser;
+        private readonly IRecoverPatientConsumer _recoverEmailPatient;
+        private readonly IRecoverDoctorConsumer _recoverEmailDoctor;
 
-        public EmailService(IRecoverPatient recoverEmailUser)
+        public EmailService(IRecoverPatientConsumer recoverEmailPatient, IRecoverDoctorConsumer recoverEmailDoctor)
         {
-            _recoverEmailUser = recoverEmailUser;
+            _recoverEmailPatient = recoverEmailPatient;
+            _recoverEmailDoctor = recoverEmailDoctor;
 
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -32,63 +34,29 @@ namespace Shared.Infrastructure.Services
                 ?? throw new Exception("String de conexão não informada");
         }
 
-        public async Task SendEmailAsync(string message, int id, bool isPatient)
+        public void SendEmailAsync(string message, string userEmail, string userName, int? id)
         {
+            string emailPatient = null;
+            string namePatient = null;
             
-            if (isPatient)
+            if(id != null)
             {
-                var patient = _recoverEmailUser.Get(id);
-
-                if (patient != null)
-                {
-                    try
-                    {
-                        var email = new MimeMessage();
-                        email.From.Add(new MailboxAddress("Sistema", _emailSender));
-                        email.To.Add(new MailboxAddress("Admin", patient.Email));
-                        email.Subject = "Agendamento de consulta";
-                        email.Body = new TextPart("plain") { Text = $"Olá {patient.Name}.\n\n{message}" };
-
-                        using var smtp = new SmtpClient();
-                        await smtp.ConnectAsync(_smtpServer, _smtpPort, MailKit.Security.SecureSocketOptions.StartTls);
-                        await smtp.AuthenticateAsync(_emailSender, _emailPassword);
-                        await smtp.SendAsync(email);
-                        await smtp.DisconnectAsync(true);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
-                    }
-
-                }
+                var user = _recoverEmailPatient.Get(Convert.ToInt32(id));
+                emailPatient = user.Email;
+                namePatient = user.Name;
             }
-            else
-            {
-                var doctor = _recoverEmailUser.Get(id);
+                    
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress("Sistema", _emailSender));
+            email.To.Add(new MailboxAddress("Admin", string.IsNullOrEmpty(userEmail) ? emailPatient : userEmail));
+            email.Subject = "Agendamento de consulta";
+            email.Body = new TextPart("plain") { Text = $"Olá {(string.IsNullOrEmpty(userName) ? namePatient : userName)}.\n\n{message}" };
 
-                if (doctor != null)
-                {
-                    try
-                    {
-                        var email = new MimeMessage();
-                        email.From.Add(new MailboxAddress("Sistema", _emailSender));
-                        email.To.Add(new MailboxAddress("Admin", doctor.Email));
-                        email.Subject = "Agendamento de consulta";
-                        email.Body = new TextPart("plain") { Text = $"Olá {doctor.Name}.\n\n{message}" };
-
-                        using var smtp = new SmtpClient();
-                        await smtp.ConnectAsync(_smtpServer, _smtpPort, MailKit.Security.SecureSocketOptions.StartTls);
-                        await smtp.AuthenticateAsync(_emailSender, _emailPassword);
-                        await smtp.SendAsync(email);
-                        await smtp.DisconnectAsync(true);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
-                    }
-
-                }
-            }
+            using var smtp = new SmtpClient();
+            smtp.ConnectAsync(_smtpServer, _smtpPort, MailKit.Security.SecureSocketOptions.StartTls).Wait();
+            smtp.AuthenticateAsync(_emailSender, _emailPassword).Wait();
+            smtp.SendAsync(email).Wait();
+            smtp.DisconnectAsync(true).Wait();
         }
     }
 }

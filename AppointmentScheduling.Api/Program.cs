@@ -6,6 +6,9 @@ using AppointmentScheduling.Domain.Configurations;
 using AppointmentScheduling.Infrastructure.Configurations;
 using Shared.Rabbit.Configurations;
 using Shared.Rabbit.Infra;
+using Shared.Infrastructure.Services;
+using Shared.Infrastructure.Repositories;
+using Shared.Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
@@ -49,9 +52,10 @@ builder.Services.ConfigurationRabbitProducer(options =>
     options.VirtualHost = builder.Configuration.GetValue<string>(ApplicationVariables.Rabbit.VirtualHost);
 });
 
+
 builder.Services.AddDomain();
 builder.Services.AddInfrastructure();
-
+builder.Services.AddScoped<IRepository<Patient>, EFRepository<Patient>>();
 builder.Services.DbConfiguration(configuration.GetConnectionString("HealthMedScheduling") ?? string.Empty);
 builder.Services.AddJwtAuthentication();
 

@@ -19,12 +19,14 @@ namespace AppointmentConsumer.Domain.Usecases
 
                 if (check)
                 {
-                    _repository.Insert(insertEntity);
-                    _emailService.SendEmailAsync("O horario escolhido foi agendado com sucesso!", insertEntity.IdPatient, true);
+                    var appointment = _repository.Insert(insertEntity);
+                    var user = _repository.Where(a => a.Id == appointment.Id, true)
+                    .FirstOrDefault();
+                    _emailService.SendEmailAsync("O horario escolhido foi agendado com sucesso!", user.Patient.Email, user.Patient.Name, null);
                 }
                 else
                 {
-                    _emailService.SendEmailAsync("O horario escolhido está indisponível!", insertEntity.IdPatient, true);
+                    _emailService.SendEmailAsync("O horario escolhido está indisponível!", null, null, insertEntity.IdPatient);
                 }
             }
         }
@@ -35,12 +37,17 @@ namespace AppointmentConsumer.Domain.Usecases
             {
                 _repository.AppointmentUpdate(updateModel.ToEntity());
 
+                var user = _repository.Where(a => a.Id == updateModel.Id, true)
+                    .FirstOrDefault();
+
                 if (updateModel.Status == AppointmentStatusEnum.Cancelled)
                 {
-                    _emailService.SendEmailAsync($"Atendimento cancellado: {updateModel.CancellationJustification}!", updateModel.IdDoctor, false);
+                    _emailService.SendEmailAsync($"Atendimento cancellado: {updateModel.CancellationJustification}!", user.Doctor.Email, user.Doctor.Name, null);
                 }
-                
-                _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", updateModel.IdPatient, true);
+                else
+                {
+                    _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", null, null, updateModel.IdPatient);
+                }
             }
         }
     }

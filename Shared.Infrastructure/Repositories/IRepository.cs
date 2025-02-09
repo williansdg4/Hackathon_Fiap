@@ -10,7 +10,7 @@ namespace Shared.Infrastructure.Repositories
         T? Get(int id);
         bool Exists(Func<T, bool> predicate);
         IEnumerable<T> Where(Func<T, bool> predicate, bool loadNavigations = false);
-        void Insert(T entity);
+        T Insert(T entity);
         void Update(T entity);
         void Delete(T? entity);
         void Delete(int id);

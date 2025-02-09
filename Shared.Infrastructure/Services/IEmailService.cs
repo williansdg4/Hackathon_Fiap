@@ -2,6 +2,6 @@
 {
     public interface IEmailService
     {
-        Task SendEmailAsync(string errorMessage, int id, bool isPatient);
+        void SendEmailAsync(string errorMessage, string userEmail, string userName, int? id);
     }
 }

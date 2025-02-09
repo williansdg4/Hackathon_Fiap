@@ -4,8 +4,8 @@ using Shared.Infrastructure.Repositories;
 
 namespace Shared.Infrastructure.Services
 {
-    public class RecoverDoctor(ApplicationDbContextConsumer context) : ConsumerRepository<Doctor>(context),
-        IRecoverDoctor
+    public class RecoverDoctorConsumer(ApplicationDbContextConsumer context) : ConsumerRepository<Doctor>(context),
+        IRecoverDoctorConsumer
     {
     }
 }

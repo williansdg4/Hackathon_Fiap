@@ -7,7 +7,7 @@ namespace AppointmentScheduling.Domain.Models
     {
         public required int IdDoctor { get; set; }
         [JsonIgnore]
-        public required int IdPatient { get; set; }
+        public int IdPatient { get; set; }
         public required int IdTimeSchedule { get; set; }
     }
 }

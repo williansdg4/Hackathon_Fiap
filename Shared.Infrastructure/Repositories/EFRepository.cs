@@ -39,10 +39,11 @@ namespace Shared.Infrastructure.Repositories
         public IList<T> GetAll() =>
             _dbSet.ToList();
 
-        public void Insert(T entity)
+        public T Insert(T entity)
         {
-            _dbSet.Add(entity);
+            var result = _dbSet.Add(entity).Entity;
             _context.SaveChanges();
+            return result;
         }
 
         public void Update(T entity)
