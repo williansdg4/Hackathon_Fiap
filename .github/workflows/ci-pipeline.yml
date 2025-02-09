@@ -1,0 +1,35 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código fonte
+        uses: actions/checkout@v3
+
+      - name: Configuração .NET
+        uses: actions/setup-dotnet@v4.0.1
+        with:
+          dotnet-version: '8.0.101'
+
+      - name: Imagem SQL Server
+        run: docker pull mcr.microsoft.com/mssql/server
+
+      - name: Build
+        run: dotnet build ./Hackathon_Fiap/HealthMedScheduling.sln -c Release --verbosity minimal
+
+      - name: Testes unitários Appointment
+        run: dotnet test ./Hackathon_Fiap/AppointmentScheduling.Test/AppointmentScheduling.Test.csproj -c Release --verbosity minimal --no-build --no-restore
+
+      - name: Testes unitários Time Schedule
+        run: dotnet test ./Hackathon_Fiap/TimeSchedulerRegister.Test/TimeSchedulerRegister.Test.csproj -c Release --verbosity minimal --no-build --no-restore
+
+      - name: Testes unitários Account
+        run: dotnet test ./Hackathon_Fiap/Account.Test/Account.Test.csproj -c Release --verbosity minimal --no-build --no-restore
