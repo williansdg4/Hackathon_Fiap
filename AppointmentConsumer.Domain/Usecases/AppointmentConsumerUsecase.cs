@@ -2,6 +2,7 @@
 using Shared.Domain.Models;
 using Shared.Domain.Mappers;
 using Shared.Infrastructure.Services;
+using Shared.Domain.Enums;
 
 namespace AppointmentConsumer.Domain.Usecases
 {
@@ -18,12 +19,14 @@ namespace AppointmentConsumer.Domain.Usecases
 
                 if (check)
                 {
-                    _repository.Insert(insertEntity);
-                    _emailService.SendEmailAsync("O horario escolhido foi agendado com sucesso!", insertEntity.IdPatient);
+                    var appointment = _repository.Insert(insertEntity);
+                    var user = _repository.Where(a => a.Id == appointment.Id, true)
+                    .FirstOrDefault();
+                    _emailService.SendEmailAsync("O horario escolhido foi agendado com sucesso!", user.Patient.Email, user.Patient.Name, null);
                 }
                 else
                 {
-                    _emailService.SendEmailAsync("O horario escolhido está indisponível!", insertEntity.IdPatient);
+                    _emailService.SendEmailAsync("O horario escolhido está indisponível!", null, null, insertEntity.IdPatient);
                 }
             }
         }
@@ -33,7 +36,18 @@ namespace AppointmentConsumer.Domain.Usecases
             if (entity is UpdateAppointmentModel updateModel)
             {
                 _repository.AppointmentUpdate(updateModel.ToEntity());
-                _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", updateModel.IdPatient);
+
+                var user = _repository.Where(a => a.Id == updateModel.Id, true)
+                    .FirstOrDefault();
+
+                if (updateModel.Status == AppointmentStatusEnum.Cancelled)
+                {
+                    _emailService.SendEmailAsync($"Atendimento cancellado: {updateModel.CancellationJustification}!", user.Doctor.Email, user.Doctor.Name, null);
+                }
+                else
+                {
+                    _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", null, null, updateModel.IdPatient);
+                }
             }
         }
     }

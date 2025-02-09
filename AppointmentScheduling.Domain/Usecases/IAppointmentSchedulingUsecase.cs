@@ -5,6 +5,6 @@ namespace AppointmentScheduling.Domain.Usecases
     public interface IAppointmentSchedulingUsecase
     {
         void AppointmentSchedulingUpdate(RequestNewAppointmentStatusModel model);
-        void AppointmentSchedulingInsert(RequestNewAppointmentModel model);
+        void AppointmentSchedulingInsert(RequestNewAppointmentModel model, string user, string email);
     }
 }

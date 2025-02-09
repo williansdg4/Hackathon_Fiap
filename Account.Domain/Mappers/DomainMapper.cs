@@ -10,7 +10,6 @@ namespace Account.Domain.Mappers
             Crm = model.Crm,
             Name = model.Name,
             Specialty = model.Specialty,
-            Password = string.Empty,
         };
 
         public static Patient ToEntity(this InsertPatientModel model) => new()
@@ -18,7 +17,6 @@ namespace Account.Domain.Mappers
             Cpf = model.Cpf,
             Name = model.Name,
             Email = model.Email,
-            Password = string.Empty,
         };
     }
 }

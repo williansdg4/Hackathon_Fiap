@@ -1,4 +1,5 @@
-﻿using AppointmentScheduling.Domain.Models;
+﻿using System.Security.Claims;
+using AppointmentScheduling.Domain.Models;
 using AppointmentScheduling.Domain.Usecases;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +50,9 @@ namespace AppointmentScheduling.Api.Controllers
         [HttpPost("[action]"), Authorize(Roles = Roles.Patient)]
         public IActionResult InsertAppointment([FromBody] RequestNewAppointmentModel model)
         {
-            _appointmentSchedulingUsecase.AppointmentSchedulingInsert(model);
+            var user = HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
+            var email = HttpContext.User.FindFirst(ClaimTypes.Email)?.Value;
+            _appointmentSchedulingUsecase.AppointmentSchedulingInsert(model, user, email);
 
             return Ok();
         }

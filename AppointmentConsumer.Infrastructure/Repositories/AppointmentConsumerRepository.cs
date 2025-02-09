@@ -13,10 +13,10 @@ namespace AppointmentConsumer.Infrastructure.Repositories
         public void AppointmentUpdate(Appointment entity)
         {
             context.Appointments
-                .Where(a => a.Id == entity.Id)
-                .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(a => a.Status, entity.Status)
-                    .SetProperty(a => a.CancellationJustification, entity.CancellationJustification));
+            .Where(a => a.Id == entity.Id)
+            .ExecuteUpdateAsync(setters => setters
+                .SetProperty(a => a.Status, entity.Status)
+                .SetProperty(a => a.CancellationJustification, entity.CancellationJustification));
             context.SaveChanges();
         }
 
@@ -29,6 +29,11 @@ namespace AppointmentConsumer.Infrastructure.Repositories
                 .FirstOrDefault();
 
             return appointment is null;
+        }
+
+        public override IQueryable<Appointment> DbSetIncluded()
+        {
+            return _dbSet.Include(d => d.Doctor).Include(p => p.Patient);
         }
     }
 }

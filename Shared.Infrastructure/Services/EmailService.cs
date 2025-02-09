@@ -10,11 +10,13 @@ namespace Shared.Infrastructure.Services
         private readonly int _smtpPort;
         private readonly string _emailSender;
         private readonly string _emailPassword;
-        private readonly IRecoverUser _recoverEmailUser;
+        private readonly IRecoverPatientConsumer _recoverEmailPatient;
+        private readonly IRecoverDoctorConsumer _recoverEmailDoctor;
 
-        public EmailService(IRecoverUser recoverEmailUser)
+        public EmailService(IRecoverPatientConsumer recoverEmailPatient, IRecoverDoctorConsumer recoverEmailDoctor)
         {
-            _recoverEmailUser = recoverEmailUser;
+            _recoverEmailPatient = recoverEmailPatient;
+            _recoverEmailDoctor = recoverEmailDoctor;
 
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -32,32 +34,29 @@ namespace Shared.Infrastructure.Services
                 ?? throw new Exception("String de conexão não informada");
         }
 
-        public async Task SendEmailAsync(string message, int id)
+        public void SendEmailAsync(string message, string userEmail, string userName, int? id)
         {
-            var patient = _recoverEmailUser.Get(id);
-
-            if (patient != null)
+            string emailPatient = null;
+            string namePatient = null;
+            
+            if(id != null)
             {
-                try
-                {
-                    var email = new MimeMessage();
-                    email.From.Add(new MailboxAddress("Sistema", _emailSender));
-                    email.To.Add(new MailboxAddress("Admin", patient.Email));
-                    email.Subject = "Agendamento de consulta";
-                    email.Body = new TextPart("plain") { Text = $"Olá {patient.Name}.\n\n{message}" };
-
-                    using var smtp = new SmtpClient();
-                    await smtp.ConnectAsync(_smtpServer, _smtpPort, MailKit.Security.SecureSocketOptions.StartTls);
-                    await smtp.AuthenticateAsync(_emailSender, _emailPassword);
-                    await smtp.SendAsync(email);
-                    await smtp.DisconnectAsync(true);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-                
+                var user = _recoverEmailPatient.Get(Convert.ToInt32(id));
+                emailPatient = user.Email;
+                namePatient = user.Name;
             }
+                    
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress("Sistema", _emailSender));
+            email.To.Add(new MailboxAddress("Admin", string.IsNullOrEmpty(userEmail) ? emailPatient : userEmail));
+            email.Subject = "Agendamento de consulta";
+            email.Body = new TextPart("plain") { Text = $"Olá {(string.IsNullOrEmpty(userName) ? namePatient : userName)}.\n\n{message}" };
+
+            using var smtp = new SmtpClient();
+            smtp.ConnectAsync(_smtpServer, _smtpPort, MailKit.Security.SecureSocketOptions.StartTls).Wait();
+            smtp.AuthenticateAsync(_emailSender, _emailPassword).Wait();
+            smtp.SendAsync(email).Wait();
+            smtp.DisconnectAsync(true).Wait();
         }
     }
 }
