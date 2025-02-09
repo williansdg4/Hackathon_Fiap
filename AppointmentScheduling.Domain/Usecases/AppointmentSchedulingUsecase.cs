@@ -15,7 +15,7 @@ namespace AppointmentScheduling.Domain.Usecases
 
         public void AppointmentSchedulingInsert(RequestNewAppointmentModel model, string user, string email)
         {
-            var patient = _recoverUser.Get(u => u.Name == user);
+            var patient = _recoverUser.Get(u => u.Cpf == user);
             model.IdPatient = patient.Id;
 
             _repository.Insert(model.RequestInsertToEntity());

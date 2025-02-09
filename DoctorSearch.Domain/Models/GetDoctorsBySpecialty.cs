@@ -10,6 +10,7 @@
 
     public class GetDoctorsBySpecialtySchedule
     {
+        public int Id { get; set; }
         public DateTime Date { get; set; }
         public string Hours { get; set; }
     }

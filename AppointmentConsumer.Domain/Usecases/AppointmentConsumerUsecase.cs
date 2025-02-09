@@ -46,7 +46,7 @@ namespace AppointmentConsumer.Domain.Usecases
                 }
                 else
                 {
-                    _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", null, null, updateModel.IdPatient);
+                    _emailService.SendEmailAsync("Status do agendamento atualizado com sucesso!", null, null, user.IdPatient);
                 }
             }
         }

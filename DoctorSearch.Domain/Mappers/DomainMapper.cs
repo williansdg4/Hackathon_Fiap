@@ -19,6 +19,7 @@ namespace DoctorSearch.Domain.Mappers
 
         public static GetDoctorsBySpecialtySchedule FromEntity(this TimeSchedule entity) => new()
         {
+            Id = entity.Id,
             Date = entity.AvailableDate,
             Hours = entity.AvailableHours
         };
